@@ -3,23 +3,21 @@
 // #2024_10_06_Time_523_ms_(88.46%)_Space_147.3_MB_(92.31%)
 
 class Solution {
-  bool backtrace(List<List<String>> board, List<List<bool>> visited,
-      String word, int index, int x, int y) {
+  bool backtrace(
+      List<List<String>> board, List<List<bool>> visited, String word, int index, int x, int y) {
     if (index == word.length) {
       return true;
     }
-    if (x < 0 || x >= board.length || y < 0 || y >= board[0].length ||
-        visited[x][y]) {
+    if (x < 0 || x >= board.length || y < 0 || y >= board[0].length || visited[x][y]) {
       return false;
     }
     visited[x][y] = true;
 
     if (word[index] == board[x][y]) {
-      bool res =
-          backtrace(board, visited, word, index + 1, x, y + 1) ||
-              backtrace(board, visited, word, index + 1, x, y - 1) ||
-              backtrace(board, visited, word, index + 1, x + 1, y) ||
-              backtrace(board, visited, word, index + 1, x - 1, y);
+      bool res = backtrace(board, visited, word, index + 1, x, y + 1) ||
+          backtrace(board, visited, word, index + 1, x, y - 1) ||
+          backtrace(board, visited, word, index + 1, x + 1, y) ||
+          backtrace(board, visited, word, index + 1, x - 1, y);
 
       if (!res) {
         visited[x][y] = false;
@@ -32,8 +30,8 @@ class Solution {
   }
 
   bool exist(List<List<String>> board, String word) {
-    List<List<bool>> visited = List.generate(
-        board.length, (_) => List.filled(board[0].length, false));
+    List<List<bool>> visited =
+        List.generate(board.length, (_) => List.filled(board[0].length, false));
 
     for (int i = 0; i < board.length; i++) {
       for (int j = 0; j < board[0].length; j++) {

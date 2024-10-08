@@ -13,8 +13,7 @@ class Solution {
     int count = t.length;
     int begin = 0;
     int end = 0;
-    int d = double.maxFinite
-        .toInt();
+    int d = double.maxFinite.toInt();
     int head = 0;
 
     while (end < s.length) {

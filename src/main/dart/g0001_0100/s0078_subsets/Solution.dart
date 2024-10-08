@@ -9,8 +9,7 @@ class Solution {
 
     for (int n in nums) {
       l = ans.length;
-      for (int i = 0; i < l; i++)
-        ans.add([...ans[i], n]);
+      for (int i = 0; i < l; i++) ans.add([...ans[i], n]);
     }
     return ans;
   }

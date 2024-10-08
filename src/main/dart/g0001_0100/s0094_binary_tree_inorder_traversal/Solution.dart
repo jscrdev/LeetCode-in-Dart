@@ -36,7 +36,6 @@ class Stack<T> {
 }
 
 class Solution {
-
   List<int> inorderTraversal(TreeNode? root) {
     final result = List<int>.empty(growable: true);
     final stack = Stack<TreeNode>();

@@ -31,9 +31,7 @@ class Solution {
       return maxWhenSorted;
     } else {
       int minInd = findMinInArray(a, start, limit);
-      return maxOfThreeNums(
-          largestArea(a, start, minInd),
-          a[minInd] * (limit - start),
+      return maxOfThreeNums(largestArea(a, start, minInd), a[minInd] * (limit - start),
           largestArea(a, minInd + 1, limit));
     }
   }
